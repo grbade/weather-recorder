@@ -19,6 +19,7 @@ pass=<PASSWORD>
 pin=<PIN>
 ```
 
+#Usage
 The script is executable and can be used directly
 
 ##Example

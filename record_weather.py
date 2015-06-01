@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""record_weather.py
+"""Weather Recorder
 
 This module reads the temperature and hunidity from a DHT22 sensor attached
 to a raspberry pi. In the future there will also be a hook for a BMP180
@@ -7,7 +7,7 @@ pressure sensor. The result is send to a REST interface which saves the data
 from the sensors in a database.
 
 The configiguration of the URL, user and pass as well as the pin for the DHT22
-seonsor can be found in recorder.conf.
+sensor can be found in recorder.conf.
 
 The format must be:
 
@@ -67,7 +67,7 @@ def record_weather():
         url = config.get('REST', 'url')
         user = config.get('REST', 'user')
         passw = config.get('REST', 'pass')
-        payload = {'pressure': pressure, 'temperature': temperature, 
+        payload = {'pressure': pressure, 'temperature': temperature,
                 'humidity': humidity}
         headers = {'content-type': 'application/json'}
         r = requests.post(url, data=json.dumps(payload),
