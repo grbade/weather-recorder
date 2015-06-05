@@ -53,7 +53,7 @@ def record_weather():
     """
     #Getting the config file
     config = ConfigParser.ConfigParser()
-    config.readfp(open('recorder.conf'))
+    config.readfp(open('/opt/weather/recorder.conf'))
 
     sensor = Adafruit_DHT.DHT22
     pin = config.get('DHT22', 'pin')
